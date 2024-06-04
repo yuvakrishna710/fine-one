@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+    stages{
+        stage("STAGE 1 checkout the git code"){
+            steps{
+                echo "git checkout started"
+                git url: " https://github.com/yuvakrishna710/fine-one.git"
+                echo "git checkout done"
+            }
+        }
+        stage("STAGE 2 compiling the code"){
+            steps{
+                echo "compiling the code started"
+                sh "mvn compile"
+                echo "compiling done"
+            }
+        }
+        stage("STAGE 3 testing the code"){
+            steps{
+                echo "testing the code"
+                sh "mvn test"
+     }
+}
+}
